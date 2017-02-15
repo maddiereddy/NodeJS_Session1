@@ -1,0 +1,20 @@
+<!--Anonymous function which takes in email address as parameter and returns if valid or not-->
+
+<script>
+    var anonFunc = function (emailAddr) {
+        return isValid(emailAddr);
+    };
+
+    function isValid(testEmail) {
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(testEmail)) {
+            return false;
+        } else {
+            return true;
+        };
+    };
+
+    alert("test1@example.com is " + anonFunc("test1@example.com"));
+    alert("test2@example is " + anonFunc("test2@example"));
+</script>

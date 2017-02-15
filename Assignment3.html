@@ -1,0 +1,42 @@
+<!--
+An IIFE which takes in the form values name, email, phone and address and validates for blank
+space and correct email format
+isValid() function checks email validity
+-->
+
+<script>
+
+    function isValid(testEmail) {
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(testEmail)) {
+            return false;
+        } else {
+            return true;
+        };
+    };
+
+    (
+        function (name, email, phone, address) {
+            if (name.trim().length < 1) {
+                alert("Name can't be blank");
+            }
+            else if (email.trim().length < 1) {
+                alert("Email can't be blank");
+            }
+            else if (phone.trim().length < 1) {
+                alert("Phone can't be blank");
+            }
+            else if (address.trim().length < 1) {
+                alert("Address can't be blank");
+            }
+            else if (!isValid(email)) {
+                alert(email + " not valid");
+            }
+            else {
+                alert("All good!");
+            }
+        }
+    )("", "sita@example.com", "866-555-1212", "100 Main St.");
+
+</script>

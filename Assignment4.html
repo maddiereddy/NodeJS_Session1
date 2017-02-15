@@ -1,0 +1,18 @@
+<!--IIFE which takes in a person object and prints out the person's name, age and city-->
+
+<script>
+    function Person(age, name, city){
+        this.age = age;
+        this.name = name;
+        this.city = city;
+    };
+
+    var sita = new Person(42, "Sita", "San Jose");
+
+    (
+        function (person) {
+        alert("Name: " + person.name + ", Age: " + person.age + ", City: " + person.city);
+        }
+    )(sita);
+
+</script>
